@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Mini Mercearia - Controle de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Eco Mini Mercearia</h1>
+    </header>
+
+    <main class="categories-container">
+        <div class="category-card" onclick="navigateToCategory('doces')">
+            <div class="category-overlay"></div>
+            <h2>Doces</h2>
+        </div>
+        
+        <div class="category-card" onclick="navigateToCategory('bebidas')">
+            <div class="category-overlay"></div>
+            <h2>Bebidas</h2>
+        </div>
+        
+        <div class="category-card" onclick="navigateToCategory('tabacaria')">
+            <div class="category-overlay"></div>
+            <h2>Tabacaria</h2>
+        </div>
+        
+        <div class="category-card" onclick="navigateToCategory('salgados')">
+            <div class="category-overlay"></div>
+            <h2>Salgados</h2>
+        </div>
+        
+        <div class="category-card" onclick="navigateToCategory('mantimentos')">
+            <div class="category-overlay"></div>
+            <h2>Mantimentos</h2>
+        </div>
+    </main>
+
+    <script>
+        function navigateToCategory(category) {
+            localStorage.setItem('currentCategory', category);
+            window.location.href = 'categoria.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque - Eco Mini Mercearia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 id="category-title">Categoria</h1>
+        <button class="back-button" onclick="window.location.href='index.html'">← Voltar</button>
+    </header>
+
+    <main>
+        <div class="products-list" id="products-list">
+            <!-- Produtos serão inseridos aqui via JavaScript -->
+        </div>
+
+        <button class="add-button" id="add-product-btn">+</button>
+    </main>
+
+    <!-- Modal para adicionar/editar produto -->
+    <div class="modal" id="product-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2 id="modal-title">Adicionar Produto</h2>
+            
+            <form id="product-form">
+                <input type="hidden" id="product-id">
+                
+                <div class="form-group">
+                    <label for="product-name">Nome do Produto:</label>
+                    <input type="text" id="product-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="product-brand">Marca:</label>
+                    <input type="text" id="product-brand">
+                </div>
+                
+                <div class="form-group">
+                    <label for="cost-price">Preço de Custo (R$):</label>
+                    <input type="number" id="cost-price" step="0.01" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="sale-price">Preço de Venda (R$):</label>
+                    <input type="number" id="sale-price" step="0.01" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="total-quantity">Quantidade Total:</label>
+                    <input type="number" id="total-quantity" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="current-quantity">Quantidade Atual:</label>
+                    <input type="number" id="current-quantity" required>
+                </div>
+                
+                <button type="submit" class="save-btn">Salvar</button>
+                <button type="button" class="delete-btn" id="delete-btn" style="display: none;">Excluir</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para detalhes do produto -->
+    <div class="modal" id="details-modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-details-modal">&times;</span>
+            <h2 id="details-title">Detalhes do Produto</h2>
+            
+            <div class="details-content">
+                <p><strong>Nome:</strong> <span id="detail-name"></span></p>
+                <p><strong>Marca:</strong> <span id="detail-brand"></span></p>
+                <p><strong>Preço de Custo:</strong> R$ <span id="detail-cost"></span></p>
+                <p><strong>Preço de Venda:</strong> R$ <span id="detail-sale"></span></p>
+                <p><strong>Quantidade:</strong> <span id="detail-quantity"></span></p>
+                
+                <div class="progress-container">
+                    <div class="progress-bar" id="quantity-bar"></div>
+                </div>
+                
+                <div class="financial-info">
+                    <h3>Informações Financeiras</h3>
+                    <p><strong>Total Gasto:</strong> R$ <span id="total-spent"></span></p>
+                    <p><strong>Lucro Potencial:</strong> R$ <span id="potential-profit"></span></p>
+                    <p><strong>Lucro Parcial:</strong> R$ <span id="partial-profit"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="categoria.js"></script>
+</body>
+</html>
