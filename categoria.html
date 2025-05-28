@@ -94,7 +94,7 @@
 
     <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-  import { getDatabase, ref, onValue, push, update, remove } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+  import { getDatabase, ref, onValue, push, update, remove, get } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyCw1r0OlYOh81F2Bb7l2oFZAKIEaAtsO40",
@@ -106,18 +106,21 @@
     appId: "1:827204567602:web:921c79b7cbc009fd5e322b"
   };
 
+  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const database = getDatabase(app); // Inicializa o Realtime Database
-
-  // Exporte para uso global (opcional, mas útil)
+  const database = getDatabase(app);
+  
+  // Disponibiliza para o arquivo categoria.js
   window.database = database;
   window.ref = ref;
   window.onValue = onValue;
   window.push = push;
   window.update = update;
   window.remove = remove;
+  window.get = get;
 </script>
 
+<script src="categoria.js" type="module"></script>
     <script src="categoria.js"></script>
 </body>
 </html>
